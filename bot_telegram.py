@@ -34,6 +34,17 @@ def button_message(message):
     markup.add(btn2)
     bot.send_message(message.chat.id, 'Чтобы узнать погоду, поделись со мной локацией.', reply_markup=markup)
 
+@bot.message_handler(commands=['borislox🤡🙈🙉🐷💩💩'])
+def ask_zodiac(message):
+    signs = ['Овен', 'Телец', 'Близнецы', 'Рак',
+             'Лев', 'Дева', 'Весы', 'Скорпион',
+             'Стрелец', 'Козерог', 'Водолей', 'Рыбы']
+    markup = telebot.types.ReplyKeyboardMarkup(row_width=3)
+    buttons = [telebot.types.KeyboardButton(name) for name in signs]
+
+    markup.add(*buttons)
+    bot.send_message(massage.chat.id, 'борис по знаку задиака:', reply_markup=markup)
+
 
 @bot.message_handler(content_types=['contact', 'location'])
 def contact(message):
@@ -53,3 +64,17 @@ def repeat_message(message):
         res = git_search(msg[1], msg[2])
         msg = "Вот, что я смог найти:\n" + res
         bot.send_message(message.chat.id, text=msg, parse_mode='html')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
